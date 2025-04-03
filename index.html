@@ -75,40 +75,5 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <script>
-        // Add sample code to match the screenshot
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                const sampleCode = `# Sample Python file with intentional errors
-
-if True
-    # Missing colon in if statement
-True
-
-print("This should cause an error"
-
-# Undefined variable
-x is not defined
-
-# Unmatched brackets
-[1 2 3 4 ]
-
-# Unmatched quotes
-print("This should"
-
-# Function call with incorrect arguments
-def add():
-    return
-`;
-                editor.setValue(sampleCode);
-                editorContainer.classList.add('has-content');
-                analyzeBtn.disabled = false;
-                analyzeBtn.classList.add('active');
-                
-                // Simulate clicking the analyze button
-                analyzeBtn.click();
-            }, 500);
-        });
-    </script>
 </body>
 </html> 

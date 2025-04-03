@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bug-detector:
+    build: .
+    container_name: python-bug-detector
+    ports:
+      - "5501:5501"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+    restart: unless-stopped 

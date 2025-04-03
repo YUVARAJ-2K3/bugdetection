@@ -1,7 +1,7 @@
 // Initialize CodeMirror editor
 const editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
     mode: "python",
-    theme: "monokai",
+    theme: "default",
     lineNumbers: true,
     autoCloseBrackets: true,
     matchBrackets: true,
@@ -126,7 +126,7 @@ function clearErrorMarkers() {
 function addErrorMarker(line, message, type = 'error') {
     const marker = document.createElement('div');
     marker.className = type === 'error' ? 'error-icon' : 'info-icon';
-    marker.innerHTML = type === 'error' ? '❌' : 'ℹ️';
+    marker.innerHTML = ''; // Remove error symbols
     marker.title = message;
     
     const lineHandle = editor.getLineHandle(line - 1);
@@ -400,7 +400,7 @@ function updateBugDisplay(errors) {
     if (errors.length === 0) {
         bugContent.innerHTML = `
             <div class="bug-message">
-                <div class="bug-icon">✅</div>
+                <div class="bug-icon"></div>
                 <div class="bug-text">
                     <p class="bug-title">No Errors Found</p>
                     <p class="bug-description">Your code looks good!</p>
@@ -429,7 +429,7 @@ function updateBugDisplay(errors) {
         const bugMessage = document.createElement('div');
         bugMessage.className = 'bug-message';
         bugMessage.innerHTML = `
-            <div class="bug-icon">🐛</div>
+            <div class="bug-icon"></div>
             <div class="bug-text">
                 <p class="bug-title">${errorType}</p>
                 <p class="bug-description">Line ${error.line}: ${errorMessage}</p>

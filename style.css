@@ -382,6 +382,7 @@ input:checked + .slider:after {
     font-family: monospace;
     height: 100% !important;
     font-size: 14px;
+    color: #333 !important;
 }
 
 /* Line numbers styling */
